@@ -29,8 +29,15 @@ const books = require("./books.json");
 const app = express();
 
 app.use((req, res, next) => {
-    console.log("first middleware")
+    console.log("first middleware");
+    next();
 });
+
+app.use((req, res, next) => {
+    console.log("second middleware");
+    next();
+});
+
 
 app.get("/products", (req, res) => {
     res.json([]);
