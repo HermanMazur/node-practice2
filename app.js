@@ -1,21 +1,16 @@
-// const { response, request } = require("express");
 const express = require("express");    
 
-const app = express(); // app - ours web server
+const books = require("./books.json");
 
-app.get("/", (request, response) => {
-    response.send("<h2>Home page</h2>")
+const app = express();
+
+app.get("/books", (req, res) => {
+    res.send(books)
 });
 
-app.get("/contacts", (request, response) => {
-    console.log(request.url);
-    console.log(request.method);
-    // console.log(request)
-    response.send("<h2>Contacts page</h2>")
-});
+app.listen(3000);
 
-// request, response - {OBJ}!!!
-
-app.listen(3000, () => console.log("Server running"));
+// app - ours web server
+// app.listen(3000, () => console.log("Server running"));
 
 
