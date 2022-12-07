@@ -28,6 +28,10 @@ const books = require("./books.json");
 
 const app = express();
 
+app.use((req, res, next) => {
+    console.log("first middleware")
+});
+
 app.get("/products", (req, res) => {
     res.json([]);
 });
