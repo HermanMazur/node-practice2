@@ -35,6 +35,8 @@ app.use(async (req, res, next) => {
     const data = moment().format("YYYY-MM-DD_hh:mm:ss");
     await fs.appendFile("./public/server.log", `\n${method} ${url} ${data}`);
     next();
+
+    // пример использования middleware !!!!
 });
 
 // app.use((req, res, next) => {
