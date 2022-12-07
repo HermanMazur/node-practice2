@@ -31,8 +31,10 @@ const books = require("./books.json");
 
 const app = express();
 
-const corsMiddleWare = cors();
-app.use(corsMiddleWare);
+// const corsMiddleWare = cors();
+// app.use(corsMiddleWare);
+app.use(cors());
+
 // функция которая сознает middleware (готовую функцию) как пример ниже
 
 
